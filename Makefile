@@ -1,10 +1,10 @@
 ROOT=.
 
 # the latest stable version is:
-STABLE= 8.15.0
-RELDATE = "2025-07-16"
+STABLE= 8.16.0
+RELDATE = "2025-09-10"
 # The planned *next* release is:
-NEXTDATE = "2025-09-10"
+NEXTDATE = "2015-11-05"
 
 # generated file with binary package stats
 STAT = packstat.t
@@ -36,9 +36,6 @@ PAGES= \
  index.html \
  info \
  libs.html \
- news.html \
- newslog.html \
- oldnews.html \
  search.html \
  sponsors.html \
  support.html \
@@ -84,23 +81,6 @@ index.html: _index.html $(MAINPARTS) release.t packstat.t
 
 download/index.html: release.t mk-download.pl
 	./mk-download.pl > $@
-
-newslog.html: _newslog.html $(MAINPARTS)
-	$(ACTION)
-
-news2.html: _news2.html $(MAINPARTS)
-	$(ACTION)
-
-news.html: news2.html newslog.html
-	rm -f $@
-	./filter.pl < $< > $@
-
-olddata.html: _oldnews.html $(MAINPARTS)
-	$(ACTION)
-
-oldnews.html: olddata.html
-	rm -f $@
-	./filter.pl < $< > $@
 
 info: _info packstat.t
 	$(ACTION)
