@@ -245,7 +245,7 @@ RFC 2183                  Content-Disposition                August 1997
 2.4 The Creation-Date parameter
 
    The creation-date parameter MAY be used to indicate the date at which
-   the file was created.  If this parameter is included, the paramter
+   the file was created.  If this parameter is included, the parameter
    value MUST be a quoted-string which contains a representation of the
    creation date of the file in [RFC 822] `date-time' format.
 
@@ -258,7 +258,7 @@ RFC 2183                  Content-Disposition                August 1997
 
    The modification-date parameter MAY be used to indicate the date at
    which the file was last modified.  If the modification-date parameter
-   is included, the paramter value MUST be a quoted-string which
+   is included, the parameter value MUST be a quoted-string which
    contains a representation of the last modification date of the file
    in [RFC 822] `date-time' format.
 
