@@ -72,7 +72,8 @@ HEADER_API = \
 WS_API = \
  curl_ws_recv.html \
  curl_ws_send.html \
- curl_ws_meta.html
+ curl_ws_meta.html \
+ curl_ws_start_frame.html
 
 PAGES = \
  index.html \
@@ -112,6 +113,7 @@ PAGES = \
  curl_multi_cleanup.html \
  curl_multi_fdset.html \
  curl_multi_get_handles.html \
+ curl_multi_get_offt.html \
  curl_multi_info_read.html \
  curl_multi_init.html \
  curl_multi_perform.html \
@@ -558,6 +560,11 @@ curl_multi_get_handles.html: _curl_multi_get_handles.html $(MAINPARTS_CAPI) curl
 curl_multi_get_handles.gen: $(MANROOT)/curl_multi_get_handles.3 curlopt2href.pl
 	$(REN)$(MAN2HTML) < $< >$@
 
+curl_multi_get_offt.html: _curl_multi_get_offt.html $(MAINPARTS_CAPI) curl_multi_get_offt.gen
+	$(REN)$(MANACTION)
+curl_multi_get_offt.gen: $(MANROOT)/curl_multi_get_offt.3 curlopt2href.pl
+	$(REN)$(MAN2HTML) < $< >$@
+
 include Makefile.opts
 
 
@@ -712,6 +719,11 @@ curl_ws_send.gen: $(MANROOT)/curl_ws_send.3 curlopt2href.pl
 curl_ws_meta.html: _curl_ws_meta.html $(MAINPARTS_CAPI) curl_ws_meta.gen
 	$(REN)$(MANACTION)
 curl_ws_meta.gen: $(MANROOT)/curl_ws_meta.3 curlopt2href.pl
+	$(REN)$(MAN2HTML) < $< >$@
+
+curl_ws_start_frame.html: _curl_ws_start_frame.html $(MAINPARTS_CAPI) curl_ws_start_frame.gen
+	$(REN)$(MANACTION)
+curl_ws_start_frame.gen: $(MANROOT)/curl_ws_start_frame.3 curlopt2href.pl
 	$(REN)$(MAN2HTML) < $< >$@
 
 curl_pushheader_bynum.html: _curl_pushheader_bynum.html $(MAINPARTS_CAPI) curl_pushheader_bynum.gen
