@@ -8,7 +8,7 @@ HTML files that are preprocessed.
 The website is a on old custom made setup that mostly builds static HTML
 files from a set of source files using (GNU) `make`. The sources files are
 preprocessed with what is basically a souped-up C preprocessor called `fcpp`
-and a set of `perl` scripts. The manpages get converted to HTML with
+and a set of `perl` scripts. The man pages get converted to HTML with
 `roffit`.
 
 Markdown is converted to HTML with `pandoc`.
@@ -34,6 +34,21 @@ website locally by invoking make in the source root tree.
 Note that this does not make you a complete website mirror, as some scripts
 and files are only available on the real actual site, but should give you
 enough to let you load most HTML pages locally.
+
+## A local curl build
+
+The bootstrap script creates a `cvssource` entry in the web root directory. In
+that directory you should do an in-tree build of curl. This build renders a
+range of artifacts (documentation mostly) that the website build references.
+
+If you forget to do the curl build, building the website will fail due to
+missing files.
+
+A minimal non-TLS build is perfectly fine. Like this:
+
+    autoreconf -fi
+    ./configure --without-ssl --without-libpsl
+    make
 
 ## Edit the web
 

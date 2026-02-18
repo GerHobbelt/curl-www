@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 #***************************************************************************
 #                                  _   _ ____  _
 #  Project                     ___| | | |  _ \| |
@@ -271,6 +271,21 @@ sub nameref {
     }
     elsif($n =~ /^CURL_REDIR_POST_/) {
         return "<a href=\"/libcurl/c/CURLOPT_POSTREDIR.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLMINFO_/) {
+        return "<a href=\"/libcurl/c/curl_multi_get_offt.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLMNOTIFY_/) {
+        return "<a href=\"/libcurl/c/curl_multi_notify_enable.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLMNWC_/) {
+        return "<a href=\"/libcurl/c/curl_multi_setopt.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLULFLAG_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_UPLOAD_FLAGS.html\">$n</a>";
+    }
+    elsif($n =~ /^CURLFOLLOW_/) {
+        return "<a href=\"/libcurl/c/CURLOPT_FOLLOWLOCATION.html\">$n</a>";
     }
     return $n;
 }

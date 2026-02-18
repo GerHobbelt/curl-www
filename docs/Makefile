@@ -12,7 +12,10 @@ MAINPARTS += _menu.html ../alert.t
 ADVBOX = adv-related-box.inc
 
 FCPP_OPTS = -DSHOW_ALERT
-MAN2HTML = roffit --bare
+MAN2HTML = roffit --man=$(SRCROOT)/docs/libcurl=../libcurl/c --bare
+
+WCURLCVE = \
+ CVE-2025-11563.html
 
 CVELIST = \
  CVE-2000-0973.html \
@@ -188,10 +191,12 @@ CVELIST = \
  CVE-2025-5025.html \
  CVE-2025-5399.html \
  CVE-2025-9086.html \
- CVE-2025-10148.html
+ CVE-2025-10148.html \
+ CVE-2025-10966.html
 
 PAGES = \
  $(CVELIST) \
+ $(WCURLCVE) \
  alt-svc.html \
  audits.html \
  bugbounty.html \
@@ -215,6 +220,7 @@ PAGES = \
  ipfs.html \
  irc.html \
  knownbugs.html \
+ knownrisks.html \
  libs.html \
  manpage.html \
  tutorial.html \
@@ -254,7 +260,7 @@ all: vuln.gen $(PAGES) vuln-make.gen
 
 clean:
 	-test -f vuln-make.gen && make -f vuln-make.gen clean
-	rm -f $(PAGES) *.gen *.json vuln-*.html
+	rm -f -- $(PAGES) *.gen *.json vuln-*.html
 
 vuln-make.gen: vuln.gen
 
@@ -283,7 +289,7 @@ manpage.html: _manpage.html $(MAINPARTS) manoptionsdump.gen mandump.gen $(ROOT)/
 	$(ACTION)
 
 manoptionsdump.gen:
-	perl generatemanmenu.pl $(DOCROOT)/cmdline-opts > manoptionsdump.gen
+	./generatemanmenu.pl $(DOCROOT)/cmdline-opts > manoptionsdump.gen
 
 optionswhen.html: _optionswhen.html optionswhen.gen
 	$(ACTION)
@@ -312,7 +318,7 @@ mkdump.gen: $(DOCROOT)/mk-ca-bundle.1
 bugs.html: _bugs.html $(MAINPARTS) bugs.gen
 	$(ACTION)
 
-bugs.gen: $(DOCROOT)/BUGS.md faqparse.pl
+bugs.gen: $(DOCROOT)/BUGS.md
 	$(MARKDOWN) < $< > $@
 
 bugbounty.html: _bugbounty.html $(MAINPARTS) bugbounty.gen $(ADVBOX)
@@ -353,11 +359,14 @@ thanksnum.gen: $(DOCROOT)/THANKS
 thanks.gen: $(DOCROOT)/THANKS
 	grep '^[^ ]' $< | sort | sed -e 's/ /\&nbsp;/g' -e 's/-/\&\#8209/g' -e '$$!s/$$/\&nbsp;\&middot;/' > $@
 
-faq.html: _faq.shtml $(MAINPARTS) faq.gen
+faqtoc.gen: faq.gen ./mdtoc.pl
+	./mdtoc.pl < $< > $@
+
+faq.html: _faq.html $(MAINPARTS) faq.gen faqtoc.gen
 	$(ACTION)
 
-faq.gen: $(DOCROOT)/FAQ faqparse.pl
-	./faqparse.pl < $< > $@
+faq.gen: $(DOCROOT)/FAQ.md
+	$(MARKDOWN) < $< > $@
 
 alt-svc.html: _alt-svc.html $(MAINPARTS) alt-svc.gen
 	$(ACTION)
@@ -379,11 +388,20 @@ http-cookies.gen: $(DOCROOT)/HTTP-COOKIES.md
 irc.html: _irc.html $(MAINPARTS)
 	$(ACTION)
 
-knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.gen
+knownbugs.html: _knownbugs.html $(MAINPARTS) knownbugs.gen knownbugstoc.gen
 	$(ACTION)
 
-knownbugs.gen: $(DOCROOT)/KNOWN_BUGS faqparse.pl
-	./faqparse.pl < $< > $@
+knownbugstoc.gen: knownbugs.gen mdtoc.pl
+	./mdtoc.pl < $< > $@
+
+knownbugs.gen: $(DOCROOT)/KNOWN_BUGS.md
+	$(MARKDOWN) < $< > $@
+
+knownrisks.html: _knownrisks.html $(MAINPARTS) knownrisks.gen
+	$(ACTION)
+
+knownrisks.gen: $(DOCROOT)/KNOWN_RISKS.md 
+	$(MARKDOWN) < $<  > $@
 
 httpscript.gen: $(DOCROOT)/TheArtOfHttpScripting.md
 	$(MARKDOWN) < $< > $@
@@ -409,11 +427,14 @@ tutorial.html: _tutorial.html $(MAINPARTS) manual.gen
 manual.gen: $(DOCROOT)/MANUAL.md
 	$(MARKDOWN) < $< >$@
 
-todo.html: _todo.html $(MAINPARTS) todo.gen
+todo.html: _todo.html $(MAINPARTS) todo.gen todotoc.gen
 	$(ACTION)
 
-todo.gen: $(DOCROOT)/TODO faqparse.pl
-	./faqparse.pl < $< > $@
+todotoc.gen: todo.gen ./mdtoc.pl
+	./mdtoc.pl < $< > $@
+
+todo.gen: $(DOCROOT)/TODO.md
+	$(MARKDOWN) < $< > $@
 
 governance.html: _governance.html $(MAINPARTS) governance.gen
 	$(ACTION)
@@ -473,9 +494,12 @@ seclist-h.gen: vuln.pm listvulns.pl vuln.pm $(CVELIST)
 seclist-c.gen: vuln.pm listvulns.pl vuln.pm $(CVELIST)
 	./listvulns.pl critical > seclist-c.gen
 
+CVE-2025-11563.html: CVE-2025-11563.md $(MAINPARTS) advisory.t $(ADVBOX) mk-wcurl-adv-template.pl
+	$(MARKDOWN) < $< | ./curlver-to-vulnlink.pl | ./mk-wcurl-adv-template.pl $@ | fcpp $(FCPP_OPTS) -I$(ROOT) -WWW -Uunix -P -H -C -V -LL - > $@
+
 CVE-%.html: CVE-%.md $(MAINPARTS) advisory.t $(ADVBOX) curlver-to-vulnlink.pl mk-adv-template.pl cve-checker.pl
-	@perl cve-checker.pl $<
-	$(MARKDOWN) < $< | perl curlver-to-vulnlink.pl | ./mk-adv-template.pl $@ | fcpp $(FCPP_OPTS) -I$(ROOT) -WWW -Uunix -P -H -C -V -LL - > $@
+	@./cve-checker.pl $<
+	$(MARKDOWN) < $< | ./curlver-to-vulnlink.pl | ./mk-adv-template.pl $@ | fcpp $(FCPP_OPTS) -I$(ROOT) -WWW -Uunix -P -H -C -V -LL - > $@
 
 vulnerabilities.html: _vulnerabilities.html vuln.gen $(MAINPARTS)
 	$(ACTION)

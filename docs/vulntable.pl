@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # un-preprocessed _changes-file as input
 
@@ -251,7 +251,7 @@ MAINPARTS += adv-related-box.inc
 all: ${allhtml}
 
 clean:
-	rm -f ${allhtml}
+	rm -f -- ${allhtml}
 
 FOO
     ;

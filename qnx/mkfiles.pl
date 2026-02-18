@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 #use Time::localtime;
 use POSIX qw(strftime);
@@ -103,4 +103,3 @@ for my $version (reverse sort { num($a) <=> num($b) } keys %versions) {
     }
     last;
 }
-

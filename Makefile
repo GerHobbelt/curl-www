@@ -1,10 +1,10 @@
 ROOT=.
 
 # the latest stable version is:
-STABLE= 8.16.0
-RELDATE = "2025-09-10"
+STABLE= 8.17.0
+RELDATE = "2025-11-05"
 # The planned *next* release is:
-NEXTDATE = "2025-11-05"
+NEXTDATE = "2026-01-07"
 
 # generated file with binary package stats
 STAT = packstat.t
@@ -159,7 +159,7 @@ full: all
 	@cd libcurl; make
 
 clean:
-	rm -f *~ $(PAGES)
+	rm -f -- *~ $(PAGES)
 	cd docs && make clean
 	cd libcurl && make clean
 	cd mail && make clean

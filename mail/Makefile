@@ -14,7 +14,7 @@ MAINPARTS= \
  $(CURL)/where.t \
  $(ROOT)/css.t
 
-ACTION=@echo preprocessing $@; rm -f $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL $< $@;
+ACTION=@echo preprocessing $@; rm -f -- $@; fcpp -I.. -I. -WWW -Uunix -P -H -C -V -LL $< $@;
 
 PAGES = \
  subscribe.html \
@@ -36,7 +36,7 @@ subscribe.html: _subscribe.html $(MAINPARTS)
 etiquette.html: _etiquette.html $(MAINPARTS) etiquette.gen
 	$(ACTION)
 
-etiquette.gen: $(DOCROOT)/MAIL-ETIQUETTE.md $(ROOT)/docs/faqparse.pl
+etiquette.gen: $(DOCROOT)/MAIL-ETIQUETTE.md
 	$(MARKDOWN) < $< > $@
 
 mail.html: _mail.html $(MAINPARTS)
@@ -65,4 +65,4 @@ mailman.html: _mailman.html $(MAINPARTS)
 	$(ACTION)
 
 clean:
-	rm -f $(PAGES)
+	rm -f -- $(PAGES)

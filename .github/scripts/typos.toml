@@ -5,17 +5,21 @@
 [default]
 extend-ignore-identifiers-re = [
   "(connnection|EXAMPL|LISTings|ND|OBSOLET|RTO)",
-  "^(Aas|eyeballers|gost|HELO|Linz|MAK|mak|nd|typ|UE)$",
+  "^(Aas|eyeballers|gost|HELO|Linz|MAK|mak|nd|Tru64|typ|UE)$",
+  "secur32",
 ]
 
 [files]
 extend-exclude = [
-  ".github/scripts/codespell-ignore.txt",
-  ".github/scripts/spellcheck.words",
+  ".github/scripts/codespell-ignore.words",
+  ".github/scripts/pyspelling.words",
   "dev/explainopts.t",
   "docs/_companies.html",
+  "mk-sponsors.pl",
+  "_changes.html",
   "rfc/*.txt",
   "rfc/cookie_spec.html",
   "rfc/ntlm.html",
   "**/*.svg",
+  "**/*.png",
 ]
