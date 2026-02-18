@@ -16,9 +16,15 @@
 #
 # List of CWEs => https://cwe.mitre.org/data/definitions/658.html
 @vuln = (
+    "CVE-2025-15224.html|7.58.0|8.17.0|libssh key passphrase bypass without agent set|CVE-2025-15224|20260107|20251228|CWE-287: Improper Authentication|505|SSH|-|both|low|https://hackerone.com/reports/3480925",
+    "CVE-2025-15079.html|7.58.0|8.17.0|libssh global known_hosts override|CVE-2025-15079|20260107|20251224|CWE-297: Improper Validation of Certificate with Host Mismatch|505|SSH|-|both|low|https://hackerone.com/reports/3477116",
+    "CVE-2025-14819.html|7.87.0|8.17.0|OpenSSL partial chain store policy bypass|CVE-2025-14819|20260107|20251216|CWE-295: Improper Certificate Validation|505|TLS|-|lib|low",
+    "CVE-2025-14524.html|7.33.0|8.17.0|bearer token leak on cross-protocol redirect|CVE-2025-14524|20260106|20251209|CWE-522: Insufficiently Protected Credentials|505|AUTH|-|both|low|https://hackerone.com/reports/3459417",
+    "CVE-2025-14017.html|7.17.0|8.17.0|broken TLS options for threaded LDAPS|CVE-2025-14017|20260107|20251201|CWE-567: Unsynchronized Access to Shared Data in a Multi-threaded Context|2540|LDAP|-|lib|medium",
+    "CVE-2025-13034.html|8.8.0|8.17.0|No QUIC certificate pinning with GnuTLS|CVE-2025-13034|20260107|20251109|CWE-295: Improper Certificate Validation|2540|QUIC|-|both|medium",
     "CVE-2025-10966.html|7.69.0|8.16.0|missing SFTP host verification with wolfSSH|CVE-2025-10966|20251105|20250923|CWE-322: Key Exchange without Entity Authentication|505|SSH|-|both|low|https://hackerone.com/reports/3355218",
     "CVE-2025-10148.html|8.11.0|8.15.0|predictable WebSocket mask|CVE-2025-10148|20250910|20250908|CWE-340: Generation of Predictable Numbers or Identifiers|505|WebSocket|-|both|low|https://hackerone.com/reports/3330839",
-    "CVE-2025-9086.html|7.31.0|8.15.0|Out of bounds read for cookie path|CVE-2025-9086|20250910|20250811|CWE-125: Out-of-bounds Read|505|cookies|OVERREAD|lib|low|https://hackerone.com/reports/3294999",
+    "CVE-2025-9086.html|8.13.0|8.15.0|Out of bounds read for cookie path|CVE-2025-9086|20250910|20250811|CWE-125: Out-of-bounds Read|505|cookies|OVERREAD|lib|low|https://hackerone.com/reports/3294999",
     "CVE-2025-5399.html|8.13.0|8.14.0|WebSocket endless loop|CVE-2025-5399|20250604|20250530|CWE-835: Loop with Unreachable Exit Condition ('Infinite Loop')|505|WebSocket|-|lib|low|https://hackerone.com/reports/3168039",
     "CVE-2025-5025.html|8.5.0|8.13.0|No QUIC certificate pinning with wolfSSL|CVE-2025-5025|20250528|20250519|CWE-295: Improper Certificate Validation|2540|TLS|-|both|medium|https://hackerone.com/reports/3153497",
     "CVE-2025-4947.html|8.8.0|8.13.0|QUIC certificate check skip with wolfSSL|CVE-2025-4947|20250528|20250517|CWE-295: Improper Certificate Validation|2540|TLS|-|both|medium|https://hackerone.com/reports/3150884",

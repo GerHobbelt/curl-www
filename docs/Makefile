@@ -192,7 +192,13 @@ CVELIST = \
  CVE-2025-5399.html \
  CVE-2025-9086.html \
  CVE-2025-10148.html \
- CVE-2025-10966.html
+ CVE-2025-10966.html \
+ CVE-2025-13034.html \
+ CVE-2025-14017.html \
+ CVE-2025-14524.html \
+ CVE-2025-14819.html \
+ CVE-2025-15079.html \
+ CVE-2025-15224.html
 
 PAGES = \
  $(CVELIST) \
@@ -397,10 +403,13 @@ knownbugstoc.gen: knownbugs.gen mdtoc.pl
 knownbugs.gen: $(DOCROOT)/KNOWN_BUGS.md
 	$(MARKDOWN) < $< > $@
 
-knownrisks.html: _knownrisks.html $(MAINPARTS) knownrisks.gen
+knownriskstoc.gen: knownrisks.gen mdtoc.pl
+	./mdtoc.pl < $< > $@
+
+knownrisks.html: _knownrisks.html $(MAINPARTS) knownrisks.gen knownriskstoc.gen
 	$(ACTION)
 
-knownrisks.gen: $(DOCROOT)/KNOWN_RISKS.md 
+knownrisks.gen: $(DOCROOT)/KNOWN_RISKS.md
 	$(MARKDOWN) < $<  > $@
 
 httpscript.gen: $(DOCROOT)/TheArtOfHttpScripting.md

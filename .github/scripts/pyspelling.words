@@ -211,6 +211,7 @@ enum
 epoll
 EPRT
 EPSV
+erinaceus
 ERRNO
 errno
 ESNI
@@ -784,6 +785,7 @@ svc
 svcb
 SVG
 svg
+svgo
 Svyatoslav
 Swisscom
 sws
@@ -853,6 +855,7 @@ unpausing
 unsanitized
 Unshare
 unsharing
+Unsynchronized
 untrusted
 UPN
 upstreaming
@@ -881,6 +884,7 @@ VMS
 VMware
 VSE
 vsprintf
+vsz
 vt
 vtls
 vxWorks
