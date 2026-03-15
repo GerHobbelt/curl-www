@@ -17,6 +17,9 @@ MAN2HTML = roffit --man=$(SRCROOT)/docs/libcurl=../libcurl/c --bare
 WCURLCVE = \
  CVE-2025-11563.html
 
+WCURLJSON = \
+ CVE-2025-11563.json
+
 CVELIST = \
  CVE-2000-0973.html \
  CVE-2003-1605.html \
@@ -198,14 +201,18 @@ CVELIST = \
  CVE-2025-14524.html \
  CVE-2025-14819.html \
  CVE-2025-15079.html \
- CVE-2025-15224.html
+ CVE-2025-15224.html \
+ CVE-2026-1965.html \
+ CVE-2026-3783.html \
+ CVE-2026-3784.html \
+ CVE-2026-3805.html
 
 PAGES = \
  $(CVELIST) \
  $(WCURLCVE) \
+ $(WCURLJSON) \
  alt-svc.html \
  audits.html \
- bugbounty.html \
  bugs.html \
  caextract.html \
  code-of-conduct.html \
@@ -326,11 +333,6 @@ bugs.html: _bugs.html $(MAINPARTS) bugs.gen
 
 bugs.gen: $(DOCROOT)/BUGS.md
 	$(MARKDOWN) < $< > $@
-
-bugbounty.html: _bugbounty.html $(MAINPARTS) bugbounty.gen $(ADVBOX)
-	$(ACTION)
-bugbounty.gen: $(DOCROOT)/BUG-BOUNTY.md
-	$(MARKDOWN) < $(DOCROOT)/BUG-BOUNTY.md > $@
 
 history.html: _history.html $(MAINPARTS) history.gen
 	$(ACTION)
@@ -564,3 +566,6 @@ releases.csv: $(ROOT)/_changes.html ./relinfo.pl vuln.pm allvulns.gen
 
 thename.html: _thename.html $(MAINPARTS)
 	$(ACTION)
+
+$(WCURLJSON): $(WCURLJSON).in
+	ln -sf $(WCURLJSON).in $(WCURLJSON)

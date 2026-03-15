@@ -1,10 +1,10 @@
 ROOT=.
 
 # the latest stable version is:
-STABLE= 8.18.0
-RELDATE = "2026-01-07"
+STABLE= 8.19.0
+RELDATE = "2026-03-11"
 # The planned *next* release is:
-NEXTDATE = "2026-03-11"
+NEXTDATE = "2026-04-29"
 
 # generated file with binary package stats
 STAT = packstat.t
@@ -24,7 +24,7 @@ PAGES= \
  book.html \
  changes.html \
  dashboard.html \
- dashboardd.html \
+ dashboard8.html \
  dashboard5.html \
  dashboard2.html \
  dashboard1.html \
@@ -125,10 +125,10 @@ about.html: _about.html docs/_menu.html $(MAINPARTS)
 sponsors.html: _sponsors.html docs/_menu.html $(MAINPARTS)
 	$(ACTION)
 
-dashboardd.html: _dashboardd.html dash.gen dashboard.t $(MAINPARTS)
+dashboard.html: _dashboard.html dash.gen dashboard.t $(MAINPARTS)
 	$(ACTION)
 
-dashboard.html: _dashboard.html dash.gen dashboard.t $(MAINPARTS)
+dashboard8.html: _dashboard8.html dash.gen dashboard.t $(MAINPARTS)
 	$(ACTION)
 
 dashboard5.html: _dashboard5.html dash.gen dashboard.t $(MAINPARTS)
