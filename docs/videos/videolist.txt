@@ -180,7 +180,7 @@ THUMBSIZE width="250" height="188"
 DURATION 20 minutes
 DATE 2017-03-19
 WHO Stefan Eissing
-DESC How he uses curl to test Apache is HTTP/2 support
+DESC How he uses curl to test Apache's HTTP/2 support
 ENDOFVIDEO
 
 VIDEO Doing HTTP/2 with libcurl
@@ -924,7 +924,7 @@ ENDOFVIDEO
 
 VIDEO The state of curl
 DATE 2024-05-04
-DESC Daniel talks about curl in 2024. Where are are. How we do.
+DESC Daniel talks about curl in 2024. Where we are. How we do.
 DURATION 2h08
 EVENT curl-up 2024
 THUMB the-state-of-curl-2024.jpg
@@ -1308,7 +1308,7 @@ ENDOFVIDEO
 
 VIDEO HTTP news
 DATE 2025-05-04
-DESC A overview of what's happening in the world of HTTP recently.
+DESC An overview of what's happening in the world of HTTP recently.
 DURATION 22 minutes
 EVENT curl-up 2025
 THUMB http-news-2025.jpg
@@ -1416,4 +1416,129 @@ THUMB roadmap2026.jpg
 THUMBSIZE width="250" height="141"
 URL https://youtu.be/DESGZXXKajY
 WHO Daniel Stenberg
+ENDOFVIDEO
+
+VIDEO Open Source AI reality
+EVENT foss-north 2026
+URL https://youtu.be/VQ0kLuST800
+THUMB ai-reality.jpg
+THUMBSIZE width="250" height="141"
+DATE 2026-04-28
+DURATION 59 minutes
+WHO Daniel Stenberg
+DESC This talk is a reality check and status update on AI tooling for security and Open Source maintenance, with experiences from the curl project.
+ENDOFVIDEO
+
+VIDEO The state of curl
+DATE 2026-05-23
+DESC Daniel sums up the past year and looks forward.
+DURATION 2h03
+EVENT curl-up 2026
+THUMB the-state-of-curl-2026.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/zt4qMZN2xDU
+WHO Daniel Stenberg
+SLIDES https://daniel.haxx.se/media/curlup2026/The%20state%20of%20curl%202026.pdf
+ENDOFVIDEO
+
+VIDEO wttr.in update
+DATE 2026-05-23
+DESC A quick update on recent features, technical changes & maintenance challenges of wttr.in, a popular curl-friendly weather service serving millions of requests daily.
+DURATION 27 minutes
+EVENT curl-up 2026
+THUMB wttr.in-update.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/svTwZFmk7k0
+WHO Igor Chubin
+ENDOFVIDEO
+
+VIDEO Hunting for zero days with AI
+DATE 2026-05-23
+DESC AI tools for improving curl.
+DURATION 33 minutes
+EVENT curl-up 2026
+THUMB hunting-for-zero-days.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/t4wqREXVEAc
+WHO Stanislav Fort
+ENDOFVIDEO
+
+VIDEO Quantitative Comparison of QUIC
+DATE 2026-05-23
+DESC Quantitative comparison of QUIC deployment options.
+DURATION 39 minutes
+EVENT curl-up 2026
+THUMB quantitative-comparison-of-quic.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/TX3ZLRXXopI
+WHO Moritz Buhl
+ENDOFVIDEO
+
+VIDEO Multiplatform CI
+DATE 2026-05-23
+DESC How they use Jenkins in the Network UPS Tools project to do multi-platform testing.
+DURATION 30 minutes
+EVENT curl-up 2026
+THUMB multiplatform-ci-with-jenkins.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/XwNupTmXN_w
+WHO Jim Klimov
+ENDOFVIDEO
+
+VIDEO The state of curl in Debian
+DATE 2026-05-23
+DESC Everything curl in Debian in 2026.
+DURATION 45 minutes
+EVENT curl-up 2026
+THUMB state-of-curl-in-debian.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/zBot34lBvgQ
+WHO Carlos Henrique Lima Melara
+ENDOFVIDEO
+
+VIDEO curl ctx II
+DATE 2026-05-24
+DESC The second team tabletop simulation of a security event against the curl project.
+DURATION 1h5
+EVENT curl-up 2026
+THUMB curl-ctx-ii.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/WwHKCMEA9qE
+WHO James Fuller
+ENDOFVIDEO
+
+VIDEO libcurl in the Real World
+DATE 2026-05-24
+DESC Dan reports on the most popular (and unpopular) parts of libcurl after analyzing the source of hundreds of applications.
+DURATION 51 minutes
+EVENT curl-up 2026
+THUMB libcurl-real-world.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/AYq-DiieLxI
+WHO Dan Fandrich
+SLIDES https://daniel.haxx.se/media/curlup2026/libcurl%20in%20the%20real%20world.pdf
+ENDOFVIDEO
+
+VIDEO curl security 2026
+DATE 2026-05-24
+DESC The past year, where we are, what to do, how to do better. Security is important.
+DURATION 58 minutes
+EVENT curl-up 2026
+THUMB curl-security-2026.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/hl3fRNSEuUs
+WHO Daniel Stenberg
+SLIDES https://daniel.haxx.se/media/curlup2026/curl%20security%202026.pdf
+ENDOFVIDEO
+
+VIDEO QUIC hello from OpenSSL
+DATE 2026-05-24
+DESC Presentation about OpenSSL (and curl).
+DURATION 23 minutes
+EVENT curl-up 2026
+THUMB quic-hello-from-openssl.jpg
+THUMBSIZE width="250" height="141"
+URL https://youtu.be/0ihzSQubz04
+WHO Alexandr Nedvedicky
+SLIDES https://daniel.haxx.se/media/curlup2026/OpenSSL-curl-prague.pdf
 ENDOFVIDEO
