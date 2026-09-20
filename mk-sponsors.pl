@@ -15,12 +15,12 @@ my %silver = (
     "https://icons8.com/" => 'icons8.svg',
     "https://serpapi.com" => 'serpapi.svg',
     "https://proxy-hub.com/" => 'proxyhub.svg',
-    'https://iboysoft.com' => 'iBoysoft.svg',
     'https://onelessthing.co.uk/' => 'onelessthing.svg',
     'guest-b727d782' => 'zynk.svg',
     'https://www.iplocate.io' => 'iplocate.svg',
     'https://www.bairesdev.com/sponsoring-open-source-projects/' =>
     'bairesdev-logo.svg',
+    'https://www.scrapingbee.com/' => 'scrapingbee.svg',
 
     # missing logo
     'king-johnnie1' => '[none]', # no logo provided
