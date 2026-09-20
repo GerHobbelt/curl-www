@@ -1,7 +1,7 @@
 curl logos
 ==========
 
-URL: [https://curl.se/logo/](https://curl.se/logo/)
+URL: <https://curl.se/logo>
 
 You are free to use the images for purposes of showing your use of curl, your
 product's use of curl, general or specific curl information, curl advocacy and
@@ -16,7 +16,7 @@ donated to the curl project on May 26 2016.
 
 Applied minor fixes and tweaks on January 6, 2026 (by vsz).
 
-[![curl logo](curl-logo.svg)]()
+![curl logo](curl-logo.svg)
 
 | File                                             | Size  | Resolution | Format          |
 |--------------------------------------------------|-------|------------|-----------------|
@@ -28,7 +28,7 @@ Applied minor fixes and tweaks on January 6, 2026 (by vsz).
 
 ## The curl symbol
 
-[![curl symbol](curl-symbol.svg)]()
+![curl symbol](curl-symbol.svg)
 
 | File                                                       | Size | Resolution | Format          |
 |------------------------------------------------------------|------|------------|-----------------|
@@ -54,7 +54,7 @@ Further minimization by: [erinaceus](https://chaos.social/@erinaceus), vsz
 
 ## curl up
 
-[![curl up logo](curl-up.svg)]()
+![curl up logo](curl-up.svg)
 
 | File                       | Size | Resolution | Format |
 |----------------------------|------|------------|--------|

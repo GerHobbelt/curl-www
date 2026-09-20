@@ -45,7 +45,7 @@
     "CVE-2026-3805.html|8.13.0|8.18.0|use after free in SMB connection reuse|CVE-2026-3805|20260311|20260308|CWE-416: Use After Free|0|SMB|USE_AFTER_FREE|both|medium|https://hackerone.com/reports/3591944",
     "CVE-2026-3784.html|7.7|8.18.0|wrong proxy connection reuse with credentials|CVE-2026-3784|20260311|20260304|CWE-305: Authentication Bypass by Primary Weakness|0|CONNREUSE|-|both|low|https://hackerone.com/reports/3584903",
     "CVE-2026-3783.html|7.33.0|8.18.0|token leak with redirect and netrc|CVE-2026-3783|20260311|20260303|CWE-522: Insufficiently Protected Credentials|0|AUTH|-|both|medium|https://hackerone.com/reports/3583983",
-    "CVE-2026-1965.html|7.10.6|8.18.0|bad reuse of HTTP Negotiate connection|CVE-2026-1965|20260311|20260204|CWE-305: Authentication Bypass by Primary Weakness|-|CONNREUSE|-|both|medium",
+    "CVE-2026-1965.html|7.10.6|8.18.0|bad reuse of HTTP Negotiate connection|CVE-2026-1965|20260311|20260204|CWE-305: Authentication Bypass by Primary Weakness|0|CONNREUSE|-|both|medium",
     "CVE-2025-15224.html|7.58.0|8.17.0|libssh key passphrase bypass without agent set|CVE-2025-15224|20260107|20251228|CWE-287: Improper Authentication|505|SSH|-|both|low|https://hackerone.com/reports/3480925",
     "CVE-2025-15079.html|7.58.0|8.17.0|libssh global known_hosts override|CVE-2025-15079|20260107|20251224|CWE-297: Improper Validation of Certificate with Host Mismatch|505|SSH|-|both|low|https://hackerone.com/reports/3477116",
     "CVE-2025-14819.html|7.87.0|8.17.0|OpenSSL partial chain store policy bypass|CVE-2025-14819|20260107|20251216|CWE-295: Improper Certificate Validation|505|TLS|-|lib|low",
@@ -223,6 +223,6 @@
     "CVE-2005-4077.html|7.11.2|7.15.0|URL Buffer Overflow|CVE-2005-4077|20051207|20051129|CWE-122: Heap-based Buffer Overflow|0|URL|OVERFLOW|both|high",
     "CVE-2005-3185.html|7.10.6|7.14.1|NTLM Buffer Overflow|CVE-2005-3185|20051013|20051012|CWE-121: Stack-based Buffer Overflow|0|HTTP|OVERFLOW|both|high",
     "CVE-2005-0490.html|7.3|7.13.0|Authentication Buffer Overflows|CVE-2005-0490|20050221|20050221|CWE-121: Stack-based Buffer Overflow|0|auth|OVERFLOW|both|high",
-    "CVE-2003-1605.html|4.5|7.10.6|Proxy Authentication Header Information Leakage|CVE-2003-1605|20030803||CWE-201: Information Exposure Through Sent Data|0|HTTP|-|both|high",
+    "CVE-2003-1605.html|4.5|7.10.6|Proxy Authentication Header Information Leakage|CVE-2003-1605|20030803|20030803|CWE-201: Information Exposure Through Sent Data|0|HTTP|-|both|high",
     "CVE-2000-0973.html|6.0|7.4|FTP Server Response Buffer Overflow|CVE-2000-0973|20001013||CWE-121: Stack-based Buffer Overflow|0|FTP|OVERFLOW|both|critical",
     );
